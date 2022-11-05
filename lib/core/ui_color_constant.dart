@@ -19,6 +19,10 @@ dynamic getBackgroundColor() {
   return hexToColor(greyLight);
 }
 
+Color getBrandColor() {
+  return hexToColor(brandColor);
+}
+
 Color getButtonColor() {
   return hexToColor(royalBlueDarkColor);
 }

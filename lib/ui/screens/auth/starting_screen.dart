@@ -1,3 +1,4 @@
+import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,17 +11,17 @@ class StartingScreen extends StatelessWidget {
       flex: 4,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
+        children: [
           Icon(
             Icons.note_add,
             size: 150,
-            color: Colors.amber,
+            color: getBrandColor(),
           ),
-          Text(
+          const Text(
             "GID",
             style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
           ),
-          Text("The Ultimate Todo App",
+          const Text("The Ultimate Todo App",
               style: TextStyle(
                   fontSize: 20, letterSpacing: 4, fontWeight: FontWeight.w700)),
         ],
@@ -34,9 +35,9 @@ class StartingScreen extends StatelessWidget {
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.all(24),
-        decoration: const BoxDecoration(
-          color: Colors.amberAccent,
-          borderRadius: BorderRadius.only(
+        decoration: BoxDecoration(
+          color: getBrandColor(),
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(40),
             topRight: Radius.circular(40),
           ),
@@ -81,6 +82,7 @@ class StartingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: getBackgroundColor(),
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
