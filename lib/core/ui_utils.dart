@@ -17,11 +17,3 @@ Container devider(BuildContext context, double opacity) => Container(
       height: 1,
       color: Colors.grey.withOpacity(opacity),
     );
-
-double screenWidth(BuildContext context) {
-  return MediaQuery.of(context).size.width;
-}
-
-double screenHeight(BuildContext context) {
-  return MediaQuery.of(context).size.height;
-}
