@@ -26,43 +26,62 @@ class _LoginScreenState extends State<LoginScreen> {
         padding: padding24,
         width: double.infinity,
         height: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              "Welcome to",
-              style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
-            ),
-            Text("Get It Done",
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: hexToColor(greyDark))),
-            const AppEditText(hint: "Email"),
-            const AppEditText(hint: "Password", isObscure: true),
-            AppButton(
-                onTap: () {
-                  debugPrint("login pressed");
-                },
-                title: "Get In"),
-            Center(
-              child: TextButton(
-                onPressed: () {
-                  debugPrint("goto registration screen");
-                },
-                child: const Text("Not a member? Join Now"),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              RichText(
+                  text: TextSpan(
+                text: "Welcome to\n",
+                style: const TextStyle(fontSize: 45, fontWeight: FontWeight.bold, color: Colors.black,),
+                children: [
+                  TextSpan(
+                    text: "Get It Done",
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: hexToColor(greyDark)),
+                  )
+                ]
+              )),
+              const SizedBox(height: 30),
+              const AppEditText(hint: "Email"),
+              const SizedBox(height: 30),
+              const AppEditText(hint: "Password", isObscure: true),
+              const SizedBox(height: 30),
+              AppButton(
+                  onTap: () {
+                    debugPrint("login pressed");
+                  },
+                  title: "Get In"),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("Not a member?", style: TextStyle(color: Colors.black),),
+                  TextButton(onPressed: () {
+                    debugPrint("goto registration screen");
+                  },
+                    style: ButtonStyle(
+                      overlayColor: MaterialStateProperty.all(Colors.transparent)
+                  ),
+
+                    child: const Text("Join Now"),),
+                ],
               ),
-            ),
-            divider,
-            const Center(child: Text("Or Sign in with")),
-            AppButton(
-                onTap: () {
-                  debugPrint("google oauth");
-                },
-                title: "Google",
-                whiteButtton: true),
-          ],
+              const SizedBox(height: 60),
+              const Center(child: Text("Or Sign in with")),
+              const SizedBox(height: 30),
+              AppButton(
+                  onTap: () {
+                    debugPrint("google oauth");
+                  },
+                  title: "Google",
+                  whiteButtton: true,
+                buttonImage: "assets/icons/google.png",
+              ),
+            ],
+          ),
         ),
       ),
     );

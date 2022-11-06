@@ -21,6 +21,7 @@ class AppEditText extends StatefulWidget {
 
 class _AppEditTextState extends State<AppEditText> {
   bool hidePassword = true;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,9 +45,12 @@ class _AppEditTextState extends State<AppEditText> {
                             hidePassword = !hidePassword;
                           });
                         },
-                        child: Icon(hidePassword
-                            ? Icons.visibility
-                            : Icons.visibility_off),
+                        child: Icon(
+                          hidePassword
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: Colors.black,
+                        ),
                       )),
                     )
                   : null,

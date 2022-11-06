@@ -58,29 +58,31 @@ class StartingScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: AppButton(
-                      onTap: () {
-                        Get.to(const LoginScreen());
-                      },
-                      title: "Sign In"),
-                ),
-                gap10,
-                Expanded(
-                  flex: 1,
-                  child: AppButton(
-                    onTap: () {
-                      debugPrint("tapped");
-                    },
-                    title: "Sign Up",
-                    whiteButtton: true,
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: AppButton(
+                        onTap: () {
+                          Get.to(const LoginScreen());
+                        },
+                        title: "Sign In"),
                   ),
-                ),
-              ],
+                  gap10,
+                  Expanded(
+                    flex: 1,
+                    child: AppButton(
+                      onTap: () {
+                        debugPrint("tapped");
+                      },
+                      title: "Sign Up",
+                      whiteButtton: true,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
