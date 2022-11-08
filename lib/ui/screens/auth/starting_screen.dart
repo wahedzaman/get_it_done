@@ -1,6 +1,7 @@
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/ui/screens/auth/login_screen.dart';
+import 'package:GID/ui/screens/auth/registration_screen.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,45 +45,48 @@ class StartingScreen extends StatelessWidget {
             topRight: Radius.circular(40),
           ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 10),
-            const Text(
-              "Welcome",
-              style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            const Text(
-              "The most advanced and feature proof task management app. Get It Done is the only ToDo app you will ever need!",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: AppButton(
-                      onTap: () {
-                        Get.to(const LoginScreen());
-                      },
-                      title: "Sign In"),
-                ),
-                //gap10,
-                Expanded(
-                  flex: 1,
-                  child: AppButton(
-                    onTap: () {
-                      debugPrint("tapped");
-                    },
-                    title: "Sign Up",
-                    whiteButtton: true,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 10),
+              const Text(
+                "Welcome",
+                style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                "The most advanced and feature proof task management app. Get It Done is the only ToDo app you will ever need!",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: AppButton(
+                        onTap: () {
+                          Get.to(const LoginScreen());
+                        },
+                        title: "Sign In"),
                   ),
-                ),
-              ],
-            ),
-          ],
+                  gap8,
+                  Expanded(
+                    flex: 1,
+                    child: AppButton(
+                      onTap: () {
+                        Get.to(const RegistrationScreen());
+                        debugPrint("tapped");
+                      },
+                      title: "Sign Up",
+                      whiteButtton: true,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
