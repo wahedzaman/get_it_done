@@ -10,7 +10,7 @@ class StartingScreen extends StatelessWidget {
 
   _getMainColumnUpperBody() {
     return Expanded(
-      flex: 3,
+      flex: 4,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -47,12 +47,12 @@ class StartingScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 40),
+            const SizedBox(height: 10),
             const Text(
               "Welcome",
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             const Text(
               "The most advanced and feature proof task management app. Get It Done is the only ToDo app you will ever need!",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -69,7 +69,7 @@ class StartingScreen extends StatelessWidget {
                       },
                       title: "Sign In"),
                 ),
-                gap10,
+                //gap10,
                 Expanded(
                   flex: 1,
                   child: AppButton(
