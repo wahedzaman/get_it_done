@@ -20,40 +20,42 @@ class _ResetPasswordState extends State<ResetPassword> {
           foregroundColor: Colors.black,
           elevation: 0,
         ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        padding: padding24,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            gap48,
-            gap48,
-            const Text(
-                "Reset password",
-                 style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)
-            ),
-            const Text(
-                "Please enter your email address\nto send a reset request",
-                style: TextStyle(fontSize: 16)
-            ),
-            const AppEditText(
-              hint: "Email",
-            ),
-            gap48,
-            gap48,
-            gap48,
-            AppButton(
-                onTap: (){},
-                title: "Send new password"
-            ),
-           AppButton(
-               onTap: (){},
-               title: "Cancel",
-               whiteButtton: true,
-           )
-          ],
+      body: Expanded(
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          padding: padding24,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              gap48,
+              gap48,
+              const Text(
+                  "Reset password",
+                   style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)
+              ),
+              const Text(
+                  "Please enter your email address\nto send a reset request",
+                  style: TextStyle(fontSize: 16)
+              ),
+              const AppEditText(
+                hint: "Email",
+              ),
+              gap48,
+              gap48,
+              gap48,
+              AppButton(
+                  onTap: (){},
+                  title: "Send new password"
+              ),
+             AppButton(
+                 onTap: (){},
+                 title: "Cancel",
+                 whiteButtton: true,
+             )
+            ],
+          ),
         ),
       ),
     );
