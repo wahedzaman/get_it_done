@@ -2,6 +2,7 @@ import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/core/ui_utils.dart';
 import 'package:GID/ui/screens/auth/registration_screen.dart';
+import 'package:GID/ui/screens/auth/reset_password.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +45,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     color: hexToColor(greyDark))),
             const AppEditText(hint: "Email"),
             const AppEditText(hint: "Password", isObscure: true),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                InkWell(
+                  onTap: (){
+                    Get.to(const ResetPassword());
+                  },
+                  child: const Text("Forgot password?",
+                  style: TextStyle(color: Colors.blue),),
+                )
+              ],
+            ),
             AppButton(
                 onTap: () {
                   debugPrint("login pressed");
