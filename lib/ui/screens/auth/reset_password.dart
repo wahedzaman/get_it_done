@@ -28,22 +28,19 @@ class _ResetPasswordState extends State<ResetPassword> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              gap48,
-              gap48,
+              Container(height: 35,),
               const Text(
                   "Reset password",
                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)
               ),
               const Text(
                   "Please enter your email address\nto send a reset request",
-                  style: TextStyle(fontSize: 16)
+                  style: TextStyle(fontSize: 16, color: Colors.grey)
               ),
               const AppEditText(
                 hint: "Email",
               ),
-              gap48,
-              gap48,
-              gap48,
+              Container(height: 180,),
               AppButton(
                   onTap: (){},
                   title: "Send new password"
