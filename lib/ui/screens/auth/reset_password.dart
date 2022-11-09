@@ -20,8 +20,7 @@ class _ResetPasswordState extends State<ResetPassword> {
           foregroundColor: Colors.black,
           elevation: 0,
         ),
-      body: Expanded(
-        child: Container(
+      body: Container(
           width: double.infinity,
           height: double.infinity,
           padding: padding24,
@@ -56,7 +55,6 @@ class _ResetPasswordState extends State<ResetPassword> {
              )
             ],
           ),
-        ),
       ),
     );
   }
