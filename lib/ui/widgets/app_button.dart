@@ -39,7 +39,7 @@ class AppButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   if(buttonImage != null)
-                    ...[Image.asset(buttonImage!), const SizedBox(width: 8)],
+                    ...[Expanded(child: Image.asset(buttonImage!)), const SizedBox(width: 8)],
 
                   Text(
                     title,

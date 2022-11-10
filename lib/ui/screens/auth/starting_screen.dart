@@ -67,7 +67,7 @@ class StartingScreen extends StatelessWidget {
                     flex: 1,
                     child: AppButton(
                         onTap: () {
-                          Get.to(const LoginScreen());
+                          Get.to(() => const LoginScreen());
                         },
                         title: "Sign In"),
                   ),
@@ -76,7 +76,7 @@ class StartingScreen extends StatelessWidget {
                     flex: 1,
                     child: AppButton(
                       onTap: () {
-                        Get.to(const RegistrationScreen());
+                        Get.to(() => const RegistrationScreen());
                       },
                       title: "Sign Up",
                       whiteButtton: true,

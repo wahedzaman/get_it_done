@@ -1,3 +1,4 @@
+import 'package:GID/ui/screens/auth/reset_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -5,7 +6,6 @@ import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/core/ui_utils.dart';
 import 'package:GID/ui/screens/auth/registration_screen.dart';
-import 'package:GID/ui/screens/auth/reset_password.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
 
@@ -62,9 +62,24 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  const Text("Forgot password?", style: TextStyle(color: Colors.black),),
+                  TextButton(
+                    onPressed: () {
+                      Get.to(() => const ResetPasswordScreen());
+                  },
+                    style: ButtonStyle(
+                        overlayColor: MaterialStateProperty.all(Colors.transparent)
+                    ),
+
+                    child: const Text("Reset now"),),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
                   const Text("Not a member?", style: TextStyle(color: Colors.black),),
                   TextButton(onPressed: () {
-                    Get.to(const RegistrationScreen());
+                    Get.to(() =>const RegistrationScreen());
                   },
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.all(Colors.transparent)
@@ -76,13 +91,31 @@ class _LoginScreenState extends State<LoginScreen> {
               gap64,
               const Center(child: Text("Or Sign in with")),
               gap24,
-              AppButton(
-                  onTap: () {
-                    Get.to(const ResetPasswordScreen());
-                  },
-                  title: "Google",
-                  whiteButtton: true,
-                buttonImage: "assets/icons/google.png",
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: AppButton(
+                      onTap: () {
+                        debugPrint("Sign in with Facebook");
+                      },
+                      title: "Facebook",
+                    ),
+                  ),
+                  gap10,
+                  Expanded(
+                    flex: 1,
+                    child: AppButton(
+                      onTap: () {
+                        debugPrint("Sign in with google");
+                      },
+                      title: "Google",
+                      buttonImage: "assets/icons/google.png",
+                      whiteButtton: true,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/ui/screens/auth/login_screen.dart';
-import 'package:GID/ui/screens/auth/reset_password.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
 
@@ -72,7 +70,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Get.to(const LoginScreen());
+                      Get.to(() => const LoginScreen());
                     },
                     style: ButtonStyle(
                         overlayColor:
@@ -82,15 +80,33 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ],
               ),
               gap64,
-              const Center(child: Text("Or Sign in with")),
+              const Center(child: Text("Or Sign up with")),
               gap24,
-              AppButton(
-                onTap: () {
-                  Get.to(const ResetPasswordScreen());
-                },
-                title: "Google",
-                whiteButtton: true,
-                buttonImage: "assets/icons/google.png",
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: AppButton(
+                      onTap: () {
+                        debugPrint("Sign up with Facebook");
+                      },
+                      title: "Facebook",
+                    ),
+                  ),
+                  gap10,
+                  Expanded(
+                    flex: 1,
+                    child: AppButton(
+                      onTap: () {
+                        debugPrint("Sign up with google");
+                      },
+                      title: "Google",
+                      buttonImage: "assets/icons/google.png",
+                      whiteButtton: true,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
