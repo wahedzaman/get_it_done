@@ -1,14 +1,12 @@
-import 'package:GID/ui/screens/auth/login_screen.dart';
-import 'package:GID/ui/screens/auth/reset_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../../../core/ui_color_constant.dart';
-import '../../../core/ui_constants.dart';
-import '../../../core/ui_utils.dart';
-import '../../widgets/app_button.dart';
-import '../../widgets/app_edit_text.dart';
+import 'package:GID/core/ui_constants.dart';
+import 'package:GID/ui/screens/auth/login_screen.dart';
+import 'package:GID/ui/screens/auth/reset_password.dart';
+import 'package:GID/ui/widgets/app_button.dart';
+import 'package:GID/ui/widgets/app_edit_text.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -53,13 +51,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           color: Colors.black),
                     )
                   ])),
-              const SizedBox(height: 30),
+              gap24,
               const AppEditText(hint: "Full name"),
-              const SizedBox(height: 30),
+              gap24,
               const AppEditText(hint: "Email"),
-              const SizedBox(height: 30),
+              gap24,
               const AppEditText(hint: "Password", isObscure: true),
-              const SizedBox(height: 30),
+              gap24,
               AppButton(
                   onTap: () {
                     debugPrint("login pressed");
@@ -83,9 +81,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 60),
+              gap64,
               const Center(child: Text("Or Sign in with")),
-              const SizedBox(height: 30),
+              gap24,
               AppButton(
                 onTap: () {
                   Get.to(const ResetPasswordScreen());

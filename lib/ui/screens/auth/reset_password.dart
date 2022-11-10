@@ -1,10 +1,10 @@
+import 'package:flutter/material.dart';
+
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/core/ui_utils.dart';
 import 'package:GID/ui/widgets/app_button.dart';
-import 'package:flutter/material.dart';
-
-import '../../widgets/app_edit_text.dart';
+import 'package:GID/ui/widgets/app_edit_text.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   const ResetPasswordScreen({Key? key}) : super(key: key);

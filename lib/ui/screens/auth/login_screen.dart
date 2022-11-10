@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/core/ui_utils.dart';
@@ -5,8 +8,6 @@ import 'package:GID/ui/screens/auth/registration_screen.dart';
 import 'package:GID/ui/screens/auth/reset_password.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -48,11 +49,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   )
                 ]
               )),
-              const SizedBox(height: 30),
+              gap24,
               const AppEditText(hint: "Email"),
-              const SizedBox(height: 30),
+              gap24,
               const AppEditText(hint: "Password", isObscure: true),
-              const SizedBox(height: 30),
+              gap24,
               AppButton(
                   onTap: () {
                     debugPrint("login pressed");
@@ -72,9 +73,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: const Text("Join Now"),),
                 ],
               ),
-              const SizedBox(height: 60),
+              gap64,
               const Center(child: Text("Or Sign in with")),
-              const SizedBox(height: 30),
+              gap24,
               AppButton(
                   onTap: () {
                     Get.to(const ResetPasswordScreen());
