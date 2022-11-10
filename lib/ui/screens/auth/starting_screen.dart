@@ -1,6 +1,7 @@
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/ui/screens/auth/login_screen.dart';
+import 'package:GID/ui/screens/auth/registration_screen.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -75,7 +76,7 @@ class StartingScreen extends StatelessWidget {
                     flex: 1,
                     child: AppButton(
                       onTap: () {
-                        debugPrint("tapped");
+                        Get.to(const RegistrationScreen());
                       },
                       title: "Sign Up",
                       whiteButtton: true,

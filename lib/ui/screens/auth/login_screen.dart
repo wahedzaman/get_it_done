@@ -1,9 +1,11 @@
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/core/ui_utils.dart';
+import 'package:GID/ui/screens/auth/registration_screen.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -34,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
               RichText(
                   text: TextSpan(
                 text: "Welcome to\n",
-                style: const TextStyle(fontSize: 45, fontWeight: FontWeight.bold, color: Colors.black,),
+                style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.black,),
                 children: [
                   TextSpan(
                     text: "Get It Done",
@@ -60,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   const Text("Not a member?", style: TextStyle(color: Colors.black),),
                   TextButton(onPressed: () {
-                    debugPrint("goto registration screen");
+                    Get.to(const RegistrationScreen());
                   },
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.all(Colors.transparent)
