@@ -1,4 +1,5 @@
 import 'package:GID/ui/screens/auth/login_screen.dart';
+import 'package:GID/ui/screens/auth/reset_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -87,7 +88,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               const SizedBox(height: 30),
               AppButton(
                 onTap: () {
-                  debugPrint("google oauth");
+                  Get.to(const ResetPasswordScreen());
                 },
                 title: "Google",
                 whiteButtton: true,

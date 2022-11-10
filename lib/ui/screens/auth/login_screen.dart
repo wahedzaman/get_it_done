@@ -2,6 +2,7 @@ import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/core/ui_utils.dart';
 import 'package:GID/ui/screens/auth/registration_screen.dart';
+import 'package:GID/ui/screens/auth/reset_password.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 30),
               AppButton(
                   onTap: () {
-                    debugPrint("google oauth");
+                    Get.to(const ResetPasswordScreen());
                   },
                   title: "Google",
                   whiteButtton: true,
