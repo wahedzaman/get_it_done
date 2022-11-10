@@ -1,6 +1,7 @@
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/ui/screens/auth/login_screen.dart';
+import 'package:GID/ui/screens/auth/registration_screen.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -58,29 +59,31 @@ class StartingScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: AppButton(
-                      onTap: () {
-                        Get.to(const LoginScreen());
-                      },
-                      title: "Sign In"),
-                ),
-                gap10,
-                Expanded(
-                  flex: 1,
-                  child: AppButton(
-                    onTap: () {
-                      debugPrint("tapped");
-                    },
-                    title: "Sign Up",
-                    whiteButtton: true,
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: AppButton(
+                        onTap: () {
+                          Get.to(() => const LoginScreen());
+                        },
+                        title: "Sign In"),
                   ),
-                ),
-              ],
+                  gap10,
+                  Expanded(
+                    flex: 1,
+                    child: AppButton(
+                      onTap: () {
+                        Get.to(() => const RegistrationScreen());
+                      },
+                      title: "Sign Up",
+                      whiteButtton: true,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

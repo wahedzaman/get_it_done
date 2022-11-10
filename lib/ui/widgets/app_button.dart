@@ -7,6 +7,7 @@ class AppButton extends StatelessWidget {
   String title;
   bool whiteButtton;
   double width;
+  String? buttonImage;
 
   AppButton({
     Key? key,
@@ -14,6 +15,7 @@ class AppButton extends StatelessWidget {
     required this.title,
     this.whiteButtton = false,
     this.width = double.infinity,
+    this.buttonImage
   }) : super(key: key);
 
   @override
@@ -33,11 +35,19 @@ class AppButton extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
             child: Center(
-              child: Text(
-                title,
-                style: TextStyle(
-                    color: whiteButtton ? Colors.black : Colors.white,
-                    fontSize: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if(buttonImage != null)
+                    ...[Expanded(child: Image.asset(buttonImage!)), const SizedBox(width: 8)],
+
+                  Text(
+                    title,
+                    style: TextStyle(
+                        color: whiteButtton ? Colors.black : Colors.white,
+                        fontSize: 20),
+                  ),
+                ],
               ),
             ),
           ),

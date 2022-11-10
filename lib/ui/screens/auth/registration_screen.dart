@@ -1,22 +1,19 @@
-import 'package:GID/ui/screens/auth/reset_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
-import 'package:GID/core/ui_utils.dart';
-import 'package:GID/ui/screens/auth/registration_screen.dart';
+import 'package:GID/ui/screens/auth/login_screen.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegistrationScreen extends StatefulWidget {
+  const RegistrationScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegistrationScreen> createState() => _RegistrationScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,19 +33,24 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               RichText(
-                  text: TextSpan(
-                text: "Welcome to\n",
-                style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.black,),
-                children: [
-                  TextSpan(
-                    text: "Get It Done",
-                    style: TextStyle(
-                        fontSize: 30,
+                  text: const TextSpan(
+                      text: "Create a new\n",
+                      style: TextStyle(
+                        fontSize: 36,
                         fontWeight: FontWeight.bold,
-                        color: hexToColor(greyDark)),
-                  )
-                ]
-              )),
+                        color: Colors.black,
+                      ),
+                      children: [
+                    TextSpan(
+                      text: "Account",
+                      style: TextStyle(
+                          fontSize: 36,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    )
+                  ])),
+              gap24,
+              const AppEditText(hint: "Full name"),
               gap24,
               const AppEditText(hint: "Email"),
               gap24,
@@ -58,38 +60,27 @@ class _LoginScreenState extends State<LoginScreen> {
                   onTap: () {
                     debugPrint("login pressed");
                   },
-                  title: "Get In"),
+                  title: "Register now"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Forgot password?", style: TextStyle(color: Colors.black),),
+                  const Text(
+                    "Already have an account?",
+                    style: TextStyle(color: Colors.black),
+                  ),
                   TextButton(
                     onPressed: () {
-                      Get.to(() => const ResetPasswordScreen());
-                  },
+                      Get.to(() => const LoginScreen());
+                    },
                     style: ButtonStyle(
-                        overlayColor: MaterialStateProperty.all(Colors.transparent)
-                    ),
-
-                    child: const Text("Reset now"),),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text("Not a member?", style: TextStyle(color: Colors.black),),
-                  TextButton(onPressed: () {
-                    Get.to(() =>const RegistrationScreen());
-                  },
-                    style: ButtonStyle(
-                      overlayColor: MaterialStateProperty.all(Colors.transparent)
+                        overlayColor:
+                            MaterialStateProperty.all(Colors.transparent)),
+                    child: const Text("Sign in"),
                   ),
-
-                    child: const Text("Join Now"),),
                 ],
               ),
               gap64,
-              const Center(child: Text("Or Sign in with")),
+              const Center(child: Text("Or Sign up with")),
               gap24,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -98,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     flex: 1,
                     child: AppButton(
                       onTap: () {
-                        debugPrint("Sign in with Facebook");
+                        debugPrint("Sign up with Facebook");
                       },
                       title: "Facebook",
                     ),
@@ -108,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     flex: 1,
                     child: AppButton(
                       onTap: () {
-                        debugPrint("Sign in with google");
+                        debugPrint("Sign up with google");
                       },
                       title: "Google",
                       buttonImage: "assets/icons/google.png",
