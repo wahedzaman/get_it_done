@@ -1,9 +1,11 @@
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/core/ui_utils.dart';
+import 'package:GID/ui/screens/home/home_page_container_screen.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -44,6 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
             AppButton(
                 onTap: () {
                   debugPrint("login pressed");
+                  Get.to(() => const HomePageContainerScreen());
                 },
                 title: "Get In"),
             Center(
