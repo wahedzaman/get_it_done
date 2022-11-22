@@ -23,9 +23,11 @@ class StartingScreen extends StatelessWidget {
             "GID",
             style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
           ),
-          const Text("The Ultimate Todo App",
-              style: TextStyle(
-                  fontSize: 20, letterSpacing: 4, fontWeight: FontWeight.w700)),
+          const Text(
+            "The Ultimate Todo App",
+            style: TextStyle(
+                fontSize: 20, letterSpacing: 4, fontWeight: FontWeight.w700),
+          ),
         ],
       ),
     );

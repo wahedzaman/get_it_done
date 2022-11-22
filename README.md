@@ -13,3 +13,8 @@ GID (Get It Done) is a cross platform todo application
 ## Advanced Flutter Tutorial : Class 3
 
 In this series we will learn how to crate a complete application from scratch with best practices and release it to AppStore and playStore.
+
+# My personal statement & Question:
+> 
+> - 1. How to select font of the app?
+> - 2. 
