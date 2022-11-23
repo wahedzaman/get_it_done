@@ -1,6 +1,8 @@
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/core/ui_utils.dart';
+import 'package:GID/ui/screens/auth/registration_screen.dart';
+import 'package:GID/ui/screens/auth/reset_password_screen.dart';
 import 'package:GID/ui/screens/home/home_page_container_screen.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
@@ -18,9 +20,10 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: getBackgroundColor(),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: getBackgroundColor(),
         foregroundColor: Colors.black,
         automaticallyImplyLeading: true,
       ),
@@ -49,22 +52,53 @@ class _LoginScreenState extends State<LoginScreen> {
                   Get.to(() => const HomePageContainerScreen());
                 },
                 title: "Get In"),
-            Center(
-              child: TextButton(
-                onPressed: () {
-                  debugPrint("goto registration screen");
-                },
-                child: const Text("Not a member? Join Now"),
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('Forgot password?'),
+                TextButton(
+                  onPressed: () {
+                    Get.to(const ResetPasswordScreen());
+                  },
+                  child: const Text(' Reset now!'),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('Not a member?'),
+                TextButton(
+                  onPressed: () {
+                    Get.to(const RegistrationScreen());
+                  },
+                  child: const Text(' Join Now'),
+                ),
+              ],
             ),
             divider,
             const Center(child: Text("Or Sign in with")),
-            AppButton(
-                onTap: () {
-                  debugPrint("google oauth");
-                },
-                title: "Google",
-                whiteButtton: true),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: AppButton(
+                      icon: const AssetImage('assets/icons/google.png'),
+                      onTap: () {
+                        debugPrint("google oauth");
+                      },
+                      title: "Google",
+                      whiteButtton: true),
+                ),
+                gap10,
+                Expanded(
+                  child: AppButton(
+                    onTap: () {},
+                    title: 'facebook',
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

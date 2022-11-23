@@ -28,7 +28,7 @@ class _AppEditTextState extends State<AppEditText> {
       width: double.infinity,
       height: 70,
       decoration: BoxDecoration(
-        color: getBackgroundColor(),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Center(

@@ -1,3 +1,4 @@
+import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/ui/screens/auth/starting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        backgroundColor: getBackgroundColor(),
         primarySwatch: Colors.blue,
         fontFamily: 'Nunito',
       ),
