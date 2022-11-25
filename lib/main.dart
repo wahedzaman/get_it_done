@@ -10,15 +10,19 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        backgroundColor: getBackgroundColor(),
         primarySwatch: Colors.blue,
         fontFamily: 'Nunito',
+        appBarTheme: AppBarTheme(
+          backgroundColor: getBackgroundColor(),
+          elevation: 0,
+          foregroundColor: Colors.black,
+        ),
+        scaffoldBackgroundColor: getBackgroundColor(),
       ),
       home: const StartingScreen(),
     );

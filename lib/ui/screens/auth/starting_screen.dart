@@ -93,7 +93,6 @@ class StartingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: getBackgroundColor(),
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,

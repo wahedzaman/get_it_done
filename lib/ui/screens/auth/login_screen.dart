@@ -20,13 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: getBackgroundColor(),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: getBackgroundColor(),
-        foregroundColor: Colors.black,
-        automaticallyImplyLeading: true,
-      ),
+      appBar: AppBar(),
       body: Container(
         padding: padding24,
         width: double.infinity,

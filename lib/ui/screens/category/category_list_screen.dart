@@ -1,8 +1,9 @@
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/ui/screens/category/category_list_item.dart';
-import 'package:GID/ui/widgets/app_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
 class CategoryListScreen extends StatelessWidget {
   const CategoryListScreen({super.key});
@@ -10,61 +11,46 @@ class CategoryListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //option 1
-      // bottomNavigationBar: AppButton(onTap: () {}, title: "title"),
-      //option 2
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      // floatingActionButton: SizedBox(
-      //   width: double.infinity,
-      //   child: FloatingActionButton.extended(
-      //     label: Text("ljafls"),
-      //     onPressed: () {},
-      //   ),
-      // ),
-      backgroundColor: getBackgroundColor(),
       appBar: AppBar(
+        centerTitle: true,
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.black,
-        elevation: 0,
-        title: const Text("Category"),
+        title: const Text(
+          'GID MENU',
+          style: TextStyle(letterSpacing: 5),
+        ),
       ),
-      body: Stack(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            width: double.infinity,
-            height: double.infinity,
-            child: Column(
-              children: [
-                Flexible(
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 12),
-                    child: GridView.count(
-                      shrinkWrap: true,
-                      crossAxisSpacing: 18,
-                      mainAxisSpacing: 18,
-                      crossAxisCount: 3,
-                      children: List.generate(
-                          40, (index) => const CategoryListItem()),
-                    ),
-                  ),
-                )
-              ],
+          const Padding(
+            padding: EdgeInsets.only(left: 40),
+            child: Text(
+              'CATEGORY',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
-          //3rd way
-          // Positioned(
-          //   // bottom: 20,
-          //   child: Container(
-          //       margin: marginH18,
-          //       child: AppButton(onTap: () {}, title: "Create New 3")),
-          // ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-                margin: marginH18,
-                child: AppButton(onTap: () {}, title: "Create New")),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12, 24, 12, 0),
+            child: GridView(
+              shrinkWrap: true,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 16,
+                crossAxisSpacing: 5,
+              ),
+              children: const [
+                CategoryListItem(icon: Icons.home_filled, text: 'Home'),
+                CategoryListItem(icon: Icons.data_object, text: 'Code'),
+                CategoryListItem(
+                    icon: Icons.offline_bolt_rounded, text: 'Skill'),
+                CategoryListItem(icon: Icons.person, text: 'Personal'),
+                CategoryListItem(icon: Icons.library_books, text: 'Study'),
+                CategoryListItem(
+                    icon: Icons.account_balance_wallet, text: 'Account'),
+                CategoryListItem(icon: Icons.health_and_safety, text: 'Health'),
+                CategoryListItem(icon: Icons.engineering, text: 'Skill'),
+              ],
+            ),
           ),
         ],
       ),
