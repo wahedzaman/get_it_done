@@ -77,12 +77,13 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Expanded(
                   child: AppButton(
-                      icon: const AssetImage('assets/icons/google.png'),
-                      onTap: () {
-                        debugPrint("google oauth");
-                      },
-                      title: "Google",
-                      whiteButtton: true),
+                    icon: const AssetImage('assets/icons/google.png'),
+                    onTap: () {
+                      debugPrint("google oauth");
+                    },
+                    title: "Google",
+                    whiteButtton: true,
+                  ),
                 ),
                 gap10,
                 Expanded(

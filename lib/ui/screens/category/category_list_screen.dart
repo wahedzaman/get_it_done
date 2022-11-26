@@ -1,58 +1,71 @@
 import 'package:GID/core/ui_color_constant.dart';
-import 'package:GID/core/ui_constants.dart';
+import 'package:GID/core/ui_utils.dart';
 import 'package:GID/ui/screens/category/category_list_item.dart';
+import 'package:GID/ui/screens/category/category_tab.dart';
+import 'package:GID/ui/screens/category/tag_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class CategoryListScreen extends StatelessWidget {
   const CategoryListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        title: const Text(
-          'GID MENU',
-          style: TextStyle(letterSpacing: 5),
-        ),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 40),
-            child: Text(
-              'CATEGORY',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          title: const Text(
+            'GID MENU',
+            style: TextStyle(letterSpacing: 5),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(12, 24, 12, 0),
-            child: GridView(
-              shrinkWrap: true,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                mainAxisSpacing: 16,
-                crossAxisSpacing: 5,
-              ),
-              children: const [
-                CategoryListItem(icon: Icons.home_filled, text: 'Home'),
-                CategoryListItem(icon: Icons.data_object, text: 'Code'),
-                CategoryListItem(
-                    icon: Icons.offline_bolt_rounded, text: 'Skill'),
-                CategoryListItem(icon: Icons.person, text: 'Personal'),
-                CategoryListItem(icon: Icons.library_books, text: 'Study'),
-                CategoryListItem(
-                    icon: Icons.account_balance_wallet, text: 'Account'),
-                CategoryListItem(icon: Icons.health_and_safety, text: 'Health'),
-                CategoryListItem(icon: Icons.engineering, text: 'Skill'),
+        ),
+        body: Column(
+          children: [
+            TabBar(
+              indicatorColor: const Color.fromARGB(255, 31, 187, 46),
+              tabs: [
+                const Tab(
+                  child: Text(
+                    'CATEGORY',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Tab(
+                  child: Row(
+                    // I want to hear bad report for using this row here from Wahed vaya
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.tag_rounded,
+                        color: Colors.black,
+                      ),
+                      Text(
+                        'TAG',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
-          ),
-        ],
+            const Expanded(
+              child: TabBarView(
+                children: [
+                  CategoryTab(),
+                  TagTab(),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
