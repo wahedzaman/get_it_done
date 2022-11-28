@@ -1,12 +1,9 @@
-import 'package:GID/core/ui_color_constant.dart';
-import 'package:GID/core/ui_utils.dart';
-import 'package:GID/ui/screens/category/category_list_item.dart';
-import 'package:GID/ui/screens/category/category_tab.dart';
-import 'package:GID/ui/screens/category/tag_tab.dart';
+import 'package:GID/ui/screens/menu/category_tab.dart';
+import 'package:GID/ui/screens/menu/tag_tab.dart';
 import 'package:flutter/material.dart';
 
-class CategoryListScreen extends StatelessWidget {
-  const CategoryListScreen({super.key});
+class MenuScreen extends StatelessWidget {
+  const MenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

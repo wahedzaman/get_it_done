@@ -1,0 +1,65 @@
+[33mcommit 51d9b5b9c1240677c766be7ecb754f94119b770c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;33mtag: step-3[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Mohammed Habibullah <habibullah786official@gmail.com>
+Date:   Sat Nov 26 19:13:09 2022 +0600
+
+    GID MENU> Tag Tab screen added
+
+[33mcommit 05ebcabe4edff6abaed276df5ad6f023fd956671[m[33m ([m[1;33mtag: step-2[m[33m)[m
+Author: Mohammed Habibullah <habibullah786official@gmail.com>
+Date:   Fri Nov 25 23:06:25 2022 +0600
+
+    GID Menu>Category added & category design updated
+
+[33mcommit 7855450c62d5b25925b676466b39e204dbd5fd59[m[33m ([m[1;33mtag: step-1[m[33m)[m
+Author: Mohammed Habibullah <habibullah786official@gmail.com>
+Date:   Wed Nov 23 18:46:06 2022 +0600
+
+    reset password, registration screen added
+
+[33mcommit 333dccea146d161614898aa84427d0620d272fbf[m[33m ([m[1;33mtag: step-0[m[33m)[m
+Author: Mohammed Habibullah <habibullah786official@gmail.com>
+Date:   Wed Nov 23 00:49:19 2022 +0600
+
+    step-nothing
+
+[33mcommit 42318f8c430e8accb5652b86d053163ed30f31e1[m
+Author: waheduzzaman <me@waheduzzaman.com>
+Date:   Sat Nov 12 06:59:20 2022 +0600
+
+    added home page container, added page view, added category list page
+
+[33mcommit 8b94841c1b627d90400e4b5e4b587b513560dc89[m
+Author: waheduzzaman <me@waheduzzaman.com>
+Date:   Sat Nov 5 23:40:21 2022 +0600
+
+    added design
+
+[33mcommit b20c1c33c466869ad091a9262abbf6e3cd2bcaa9[m
+Author: waheduzzaman <me@waheduzzaman.com>
+Date:   Sat Nov 5 23:39:34 2022 +0600
+
+    fixed edit text padding issue
+
+[33mcommit eacbc6523115aa4b56d24847d739aa595bd3bba5[m
+Author: waheduzzaman <me@waheduzzaman.com>
+Date:   Sat Nov 5 23:13:49 2022 +0600
+
+    added login screen, added app edit text, added with property to button, an error with button fixed
+
+[33mcommit 6d45dad0dcd5fbadd37c1e7e44f9827fb07fcb2a[m
+Author: waheduzzaman <me@waheduzzaman.com>
+Date:   Sat Nov 5 11:00:05 2022 +0600
+
+    updated with the brand color
+
+[33mcommit 249c863d1fa28a04e51c0377b9a8a85b6fb44f47[m
+Author: waheduzzaman <me@waheduzzaman.com>
+Date:   Sat Nov 5 09:24:55 2022 +0600
+
+    class:1 added external libraries, added custom fonts, updated with minor changes and starting screen
+
+[33mcommit 1a365e7fda2aba2a5f521c5d62245d982d2dd9ff[m
+Author: waheduzzaman <me@waheduzzaman.com>
+Date:   Sat Oct 29 22:04:40 2022 +0600
+
+    initial commit

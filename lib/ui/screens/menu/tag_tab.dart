@@ -1,5 +1,5 @@
 import 'package:GID/core/ui_constants.dart';
-import 'package:GID/ui/screens/category/tag_tap_button.dart';
+import 'package:GID/ui/screens/menu/tag_tap_button.dart';
 import 'package:flutter/material.dart';
 
 class TagTab extends StatelessWidget {

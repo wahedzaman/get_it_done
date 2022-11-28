@@ -2,10 +2,10 @@ import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:flutter/material.dart';
 
-class CategoryListItem extends StatelessWidget {
+class CategoryItem extends StatelessWidget {
   final IconData icon;
   final String text;
-  const CategoryListItem({
+  const CategoryItem({
     Key? key,
     required this.icon,
     required this.text,
