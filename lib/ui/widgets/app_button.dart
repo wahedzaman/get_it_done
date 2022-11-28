@@ -8,15 +8,12 @@ class AppButton extends StatelessWidget {
   String title;
   bool whiteButtton;
   double width;
-  ImageProvider? icon;
-
   AppButton({
     Key? key,
     required this.onTap,
     required this.title,
     this.whiteButtton = false,
     this.width = double.infinity,
-    this.icon, //test to remove
   }) : super(key: key);
 
   @override
@@ -37,16 +34,12 @@ class AppButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //  Image(image: icon!),
-              ImageIcon(icon),
-              gap4,
               Text(
                 title,
                 style: TextStyle(
                     color: whiteButtton ? Colors.black : Colors.white,
                     fontSize: 20),
               ),
-              gap20, //This is not good to use here
             ],
           ),
         ),

@@ -77,7 +77,6 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Expanded(
                   child: AppButton(
-                    icon: const AssetImage('assets/icons/google.png'),
                     onTap: () {
                       debugPrint("google oauth");
                     },

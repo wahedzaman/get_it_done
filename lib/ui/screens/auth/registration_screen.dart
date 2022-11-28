@@ -71,7 +71,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     whiteButtton: true,
                     onTap: () {},
                     title: 'Google',
-                    icon: const AssetImage('assets/icons/google.png'),
                   ),
                 )
               ],
