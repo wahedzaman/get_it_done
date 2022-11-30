@@ -26,13 +26,26 @@ class NoteCheckboxListTile extends StatelessWidget {
         color: Colors.white,
       ),
       child: Slidable(
+        startActionPane: ActionPane(
+          motion: const BehindMotion(),
+          children: [
+            SlidableAction(
+              borderRadius: radius20,
+              onPressed: (((context) {})),
+              backgroundColor: const Color.fromARGB(255, 148, 66, 7),
+              foregroundColor: Colors.white,
+              icon: Icons.archive_rounded,
+              label: 'Archive',
+            ),
+          ],
+        ),
         endActionPane: ActionPane(
           motion: const BehindMotion(),
           children: [
             SlidableAction(
               borderRadius: radius20,
               onPressed: (((context) {})),
-              backgroundColor: const Color(0xFFFE4A49),
+              backgroundColor: const Color.fromARGB(255, 195, 26, 26),
               foregroundColor: Colors.white,
               icon: Icons.delete,
               label: 'Delete',
