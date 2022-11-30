@@ -33,10 +33,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               'Create a new \nAccount',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
-            // Text(
-            //   'Get It Done',
-            //   style: TextStyle(fontWeight: FontWeight.w900),
-            // ),
             const AppEditText(hint: 'Full name'),
             const AppEditText(hint: 'Email'),
             const AppEditText(
@@ -50,7 +46,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 const Text('Already have an account?'),
                 TextButton(
                   onPressed: () {},
-                  child: const Text(' Sign in'),
+                  child: const Text(
+                    ' Sign in',
+                    style: TextStyle(color: Color.fromARGB(255, 69, 167, 79)),
+                  ),
                 ),
               ],
             ),

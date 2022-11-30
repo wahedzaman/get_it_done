@@ -1,9 +1,10 @@
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_utils.dart';
-import 'package:GID/ui/screens/auth/starting_screen.dart';
+import 'package:GID/ui/screens/circle/circle_screen.dart';
 import 'package:GID/ui/screens/home/home_floating_action_button.dart';
 import 'package:GID/ui/screens/menu/menu_screen.dart';
 import 'package:GID/ui/screens/notes/notes_screen.dart';
+import 'package:GID/ui/screens/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomePageContainerScreen extends StatefulWidget {
@@ -19,8 +20,8 @@ class _HomePageContainerScreenState extends State<HomePageContainerScreen> {
   final tabs = [
     const MenuScreen(),
     const NotesScreen(),
-    const StartingScreen(),
-    const StartingScreen(),
+    const CircleScreen(),
+    const SettingsScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -53,8 +54,6 @@ class _HomePageContainerScreenState extends State<HomePageContainerScreen> {
                 label: 'Notes',
                 icon: const Icon(Icons.add_box_outlined),
               ),
-
-              //There a bad code
               BottomNavigationBarItem(
                 backgroundColor: getBrandColor(),
                 label: 'Circle',
@@ -68,14 +67,6 @@ class _HomePageContainerScreenState extends State<HomePageContainerScreen> {
             ],
           ),
         ),
-        // body: TabBarView(
-        //     controller: TabController(length: 2, vsync: this),
-        //     children: [
-        //       //tabs[_currentIndex],
-        //       const CategoryListScreen(),
-        //       const HomeNoteScreen(),
-        //       tabs[_currentIndex],
-        //     ]));
         body: tabs[_currentIndex]);
   }
 }

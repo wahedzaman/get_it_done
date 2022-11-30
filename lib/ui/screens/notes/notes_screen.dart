@@ -1,9 +1,6 @@
-import 'package:GID/core/ui_color_constant.dart';
-import 'package:GID/core/ui_constants.dart';
 import 'package:GID/ui/screens/notes/note_check_list_tile.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 
 class NotesScreen extends StatefulWidget {
   const NotesScreen({

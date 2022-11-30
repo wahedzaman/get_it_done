@@ -24,32 +24,37 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
       ),
       body: Padding(
         padding: padding24,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Reset password',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 42,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              gap36,
+              const Text(
+                'Reset password',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 42,
+                ),
               ),
-            ),
-            Text(
-              'Please enter your email address to \nrequest a password reset',
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: hexToColor(greyDark)),
-            ),
-            const AppEditText(hint: 'Email'),
-            AppButton(onTap: () {}, title: 'Confirm reset password'),
-            AppButton(
-              onTap: () {},
-              title: 'Cancel',
-              whiteButtton: true,
-            ),
-          ],
+              Text(
+                'Please enter your email address to \nrequest a password reset',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: hexToColor(greyDark)),
+              ),
+              gap48,
+              const AppEditText(hint: 'Email'),
+              gap48,
+              AppButton(onTap: () {}, title: 'Confirm reset password'),
+              gap18,
+              AppButton(
+                onTap: () {},
+                title: 'Cancel',
+                whiteButtton: true,
+              ),
+            ],
+          ),
         ),
       ),
     );

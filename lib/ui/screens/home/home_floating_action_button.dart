@@ -25,8 +25,6 @@ class HomeFloatingActionButton extends StatelessWidget {
             return DraggableScrollableSheet(
               expand: false,
               initialChildSize: 0.4,
-              // maxChildSize: 1,
-              // minChildSize: 0.1,
               builder: (context, scrollController) {
                 return Padding(
                   padding: const EdgeInsets.fromLTRB(24.0, 10.0, 24.0, 0),

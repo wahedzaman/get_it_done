@@ -39,15 +39,16 @@ class _AppEditTextState extends State<AppEditText> {
               suffixIcon: widget.isObscure
                   ? Container(
                       child: (GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            hidePassword = !hidePassword;
-                          });
-                        },
-                        child: Icon(hidePassword
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                      )),
+                          onTap: () {
+                            setState(() {
+                              hidePassword = !hidePassword;
+                            });
+                          },
+                          child: Icon(
+                              hidePassword
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                              color: const Color.fromARGB(255, 69, 167, 79)))),
                     )
                   : null,
               suffixIconConstraints: const BoxConstraints(

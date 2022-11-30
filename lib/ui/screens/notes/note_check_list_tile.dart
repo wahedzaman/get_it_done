@@ -20,7 +20,7 @@ class NoteCheckboxListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      margin: const EdgeInsets.only(bottom: 12, top: 12),
+      margin: const EdgeInsets.only(bottom: 6, top: 12),
       decoration: BoxDecoration(
         borderRadius: radius20,
         color: Colors.white,
@@ -40,9 +40,9 @@ class NoteCheckboxListTile extends StatelessWidget {
           ],
         ),
         child: CheckboxListTile(
-          tristate: true,
-          isThreeLine: true,
-          subtitle: Text(faker.lorem.sentences(2).toString()),
+          subtitle: Text(
+            faker.lorem.sentences(1).toString(),
+          ),
           contentPadding: padding12,
           activeColor: getBrandColor(),
           controlAffinity: ListTileControlAffinity.leading,

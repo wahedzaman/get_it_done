@@ -16,83 +16,120 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
+_getMainColumnUpperBody() {
+  return Expanded(
+    flex: 4,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          "Welcome to",
+          style: TextStyle(
+            fontSize: 45,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text("Get It Done",
+            style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: hexToColor(greyDark))),
+        gap36,
+        const AppEditText(hint: "Email"),
+        gap18,
+        const AppEditText(hint: "Password", isObscure: true),
+        gap36,
+        AppButton(
+            onTap: () {
+              debugPrint("login pressed");
+              Get.to(() => const HomePageContainerScreen());
+            },
+            title: "Get In"),
+      ],
+    ),
+  );
+}
+
+_getMainColumnLowerBody() {
+  return Expanded(
+    flex: 3,
+    child: Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Forgot password?'),
+            TextButton(
+              onPressed: () {
+                Get.to(const ResetPasswordScreen());
+              },
+              child: const Text(
+                ' Reset now!',
+                style: TextStyle(color: Color.fromARGB(255, 69, 167, 79)),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Not a member?'),
+            TextButton(
+              onPressed: () {
+                Get.to(const RegistrationScreen());
+              },
+              child: const Text(
+                ' Join Now',
+                style: TextStyle(color: Color.fromARGB(255, 69, 167, 79)),
+              ),
+            ),
+          ],
+        ),
+        gap36,
+        divider,
+        gap36,
+        const Center(child: Text("Or Sign in with")),
+        gap24,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: AppButton(
+                onTap: () {
+                  debugPrint("google oauth");
+                },
+                title: "Google",
+                whiteButtton: true,
+              ),
+            ),
+            gap10,
+            Expanded(
+              child: AppButton(
+                onTap: () {},
+                title: 'facebook',
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Container(
+      body: Padding(
         padding: padding24,
-        width: double.infinity,
-        height: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Welcome to",
-              style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
-            ),
-            Text("Get It Done",
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: hexToColor(greyDark))),
-            const AppEditText(hint: "Email"),
-            const AppEditText(hint: "Password", isObscure: true),
-            AppButton(
-                onTap: () {
-                  debugPrint("login pressed");
-                  Get.to(() => const HomePageContainerScreen());
-                },
-                title: "Get In"),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text('Forgot password?'),
-                TextButton(
-                  onPressed: () {
-                    Get.to(const ResetPasswordScreen());
-                  },
-                  child: const Text(' Reset now!'),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text('Not a member?'),
-                TextButton(
-                  onPressed: () {
-                    Get.to(const RegistrationScreen());
-                  },
-                  child: const Text(' Join Now'),
-                ),
-              ],
-            ),
-            divider,
-            const Center(child: Text("Or Sign in with")),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: AppButton(
-                    onTap: () {
-                      debugPrint("google oauth");
-                    },
-                    title: "Google",
-                    whiteButtton: true,
-                  ),
-                ),
-                gap10,
-                Expanded(
-                  child: AppButton(
-                    onTap: () {},
-                    title: 'facebook',
-                  ),
-                ),
-              ],
-            ),
+            _getMainColumnUpperBody(),
+            gap48,
+            _getMainColumnLowerBody(),
           ],
         ),
       ),
