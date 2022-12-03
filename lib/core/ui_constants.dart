@@ -29,6 +29,9 @@ EdgeInsets padding18 = const EdgeInsets.all(18);
 EdgeInsets padding20 = const EdgeInsets.all(20);
 EdgeInsets padding22 = const EdgeInsets.all(22);
 EdgeInsets padding24 = const EdgeInsets.all(24);
+EdgeInsets padding26 = const EdgeInsets.all(26);
+EdgeInsets padding28 = const EdgeInsets.all(28);
+EdgeInsets padding30 = const EdgeInsets.all(30);
 
 EdgeInsets paddingV2 = const EdgeInsets.symmetric(vertical: 2);
 EdgeInsets paddingV4 = const EdgeInsets.symmetric(vertical: 4);

@@ -23,9 +23,11 @@ class StartingScreen extends StatelessWidget {
             "GID",
             style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
           ),
-          const Text("The Ultimate Todo App",
-              style: TextStyle(
-                  fontSize: 20, letterSpacing: 4, fontWeight: FontWeight.w700)),
+          const Text(
+            "The Ultimate Todo App",
+            style: TextStyle(
+                fontSize: 20, letterSpacing: 4, fontWeight: FontWeight.w700),
+          ),
         ],
       ),
     );
@@ -91,7 +93,6 @@ class StartingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: getBackgroundColor(),
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,

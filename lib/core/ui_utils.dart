@@ -5,7 +5,9 @@ Color hexToColor(String hexClr) {
   if (hexColor.length == 6) {
     hexColor += "FF$hexColor";
   }
-  return Color(int.parse(hexColor, radix: 16));
+  return Color(
+    int.parse(hexColor, radix: 16),
+  );
 }
 
 Container devider(BuildContext context, double opacity) => Container(
