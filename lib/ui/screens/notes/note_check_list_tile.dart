@@ -20,7 +20,7 @@ class NoteCheckboxListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      margin: const EdgeInsets.only(bottom: 6, top: 12),
+      margin: const EdgeInsets.only(top: 12),
       decoration: BoxDecoration(
         borderRadius: radius20,
         color: Colors.white,
@@ -30,7 +30,9 @@ class NoteCheckboxListTile extends StatelessWidget {
           motion: const BehindMotion(),
           children: [
             SlidableAction(
-              borderRadius: radius20,
+              borderRadius: const BorderRadius.horizontal(
+                left: Radius.circular(20),
+              ),
               onPressed: (((context) {})),
               backgroundColor: const Color.fromARGB(255, 148, 66, 7),
               foregroundColor: Colors.white,
@@ -40,10 +42,14 @@ class NoteCheckboxListTile extends StatelessWidget {
           ],
         ),
         endActionPane: ActionPane(
+          openThreshold: 0.5,
+          closeThreshold: 0.9,
           motion: const BehindMotion(),
           children: [
             SlidableAction(
-              borderRadius: radius20,
+              borderRadius: const BorderRadius.horizontal(
+                right: Radius.circular(20),
+              ),
               onPressed: (((context) {})),
               backgroundColor: const Color.fromARGB(255, 195, 26, 26),
               foregroundColor: Colors.white,
@@ -53,23 +59,41 @@ class NoteCheckboxListTile extends StatelessWidget {
           ],
         ),
         child: CheckboxListTile(
-          subtitle: Text(
-            faker.lorem.sentences(1).toString(),
-          ),
-          contentPadding: padding12,
+          //[?]How can I reduce spacing between checkbox and tile?
+          //[?]How to increase the checkbox size?
+          //[!]There have an error in checkbox.
+          checkboxShape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          contentPadding: padding16, //
           activeColor: getBrandColor(),
           controlAffinity: ListTileControlAffinity.leading,
           value: taskCompleted,
-          title: Text(
-            taskName,
-            style: TextStyle(
-              decoration: taskCompleted
-                  ? TextDecoration.lineThrough
-                  : TextDecoration.none,
-              color: taskCompleted
-                  ? const Color.fromARGB(255, 184, 202, 186)
-                  : Colors.black,
+
+          title: ExpansionTile(
+            iconColor: getBrandColor(),
+            title: Text(
+              taskName,
+              style: TextStyle(
+                decoration: taskCompleted
+                    ? TextDecoration.lineThrough
+                    : TextDecoration.none,
+                color: taskCompleted
+                    ? const Color.fromARGB(255, 184, 202, 186)
+                    : Colors.black,
+              ),
             ),
+            children: [
+              const Divider(
+                indent: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30, top: 5, bottom: 5),
+                child: Text(
+                  faker.lorem.sentences(4).toString(),
+                  style: const TextStyle(color: Colors.grey),
+                ),
+              ),
+            ],
           ),
           onChanged: onChanged,
         ),

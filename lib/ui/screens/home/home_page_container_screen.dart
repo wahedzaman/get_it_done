@@ -33,6 +33,10 @@ class _HomePageContainerScreenState extends State<HomePageContainerScreen> {
           clipBehavior: Clip.hardEdge,
           shape: const CircularNotchedRectangle(),
           child: BottomNavigationBar(
+            //[?] I'm not able to padding correctly the Navbar. I want spacing
+            //around NavBar, It would like a floating button. One more thing. I need
+            // space in middle of navbar. But I Can't.
+
             type: BottomNavigationBarType.fixed,
             iconSize: 30,
             fixedColor: const Color.fromARGB(255, 1, 163, 6),

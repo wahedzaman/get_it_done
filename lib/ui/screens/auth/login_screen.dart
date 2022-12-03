@@ -124,8 +124,6 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Padding(
         padding: padding24,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _getMainColumnUpperBody(),
             gap48,
