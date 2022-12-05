@@ -15,23 +15,29 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            shadowColor: getBrandColor(),
-            elevation: 10,
-            padding: padding26,
-            backgroundColor: Colors.white,
-            side: const BorderSide(
-                width: 1.5, color: Color.fromARGB(255, 31, 187, 46)),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
+        InkWell(
+          focusColor: Colors.amber,
+          hoverColor: Colors.redAccent,
+          splashColor: Colors.teal.shade900,
+          highlightColor: Colors.blue,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              shadowColor: getBrandColor(),
+              elevation: 10,
+              padding: padding26,
+              backgroundColor: Colors.white,
+              side: const BorderSide(
+                  width: 1.5, color: Color.fromARGB(255, 31, 187, 46)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
             ),
-          ),
-          onPressed: () {},
-          child: Icon(
-            icon,
-            size: 40,
-            color: const Color(0xFFA2DEA8),
+            onPressed: () {},
+            child: Icon(
+              icon,
+              size: 40,
+              color: const Color(0xFFA2DEA8),
+            ),
           ),
         ),
         gap10,

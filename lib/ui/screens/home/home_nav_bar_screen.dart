@@ -7,15 +7,14 @@ import 'package:GID/ui/screens/notes/notes_screen.dart';
 import 'package:GID/ui/screens/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 
-class HomePageContainerScreen extends StatefulWidget {
-  const HomePageContainerScreen({super.key});
+class HomeNavbarScreen extends StatefulWidget {
+  const HomeNavbarScreen({super.key});
 
   @override
-  State<HomePageContainerScreen> createState() =>
-      _HomePageContainerScreenState();
+  State<HomeNavbarScreen> createState() => _HomeNavbarScreenState();
 }
 
-class _HomePageContainerScreenState extends State<HomePageContainerScreen> {
+class _HomeNavbarScreenState extends State<HomeNavbarScreen> {
   int _currentIndex = 1;
   final tabs = [
     const MenuScreen(),

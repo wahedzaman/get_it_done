@@ -34,8 +34,8 @@ class NoteCheckboxListTile extends StatelessWidget {
                 left: Radius.circular(20),
               ),
               onPressed: (((context) {})),
-              backgroundColor: const Color.fromARGB(255, 148, 66, 7),
-              foregroundColor: Colors.white,
+              backgroundColor: getBrandColor(),
+              foregroundColor: Colors.black,
               icon: Icons.archive_rounded,
               label: 'Archive',
             ),
@@ -62,6 +62,8 @@ class NoteCheckboxListTile extends StatelessWidget {
           //[?]How can I reduce spacing between checkbox and tile?
           //[?]How to increase the checkbox size?
           //[!]There have an error in checkbox.
+          //[add] Need to drop down the completed tasks.
+
           checkboxShape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           contentPadding: padding16, //

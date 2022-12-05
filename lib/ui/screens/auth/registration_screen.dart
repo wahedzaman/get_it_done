@@ -1,8 +1,10 @@
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
+import 'package:GID/ui/screens/auth/login_screen.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -45,7 +47,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               children: [
                 const Text('Already have an account?'),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(const LoginScreen());
+                  },
                   child: const Text(
                     ' Sign in',
                     style: TextStyle(color: Color.fromARGB(255, 69, 167, 79)),

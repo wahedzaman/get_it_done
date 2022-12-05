@@ -93,7 +93,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              //[add] show Alert Dialog here.
+            },
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 140),
               child: const Text(

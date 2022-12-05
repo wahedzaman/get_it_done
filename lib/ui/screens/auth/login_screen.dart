@@ -3,7 +3,7 @@ import 'package:GID/core/ui_constants.dart';
 import 'package:GID/core/ui_utils.dart';
 import 'package:GID/ui/screens/auth/registration_screen.dart';
 import 'package:GID/ui/screens/auth/reset_password_screen.dart';
-import 'package:GID/ui/screens/home/home_page_container_screen.dart';
+import 'package:GID/ui/screens/home/home_nav_bar_screen.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +42,7 @@ _getMainColumnUpperBody() {
         AppButton(
             onTap: () {
               debugPrint("login pressed");
-              Get.to(() => const HomePageContainerScreen());
+              Get.to(() => const HomeNavbarScreen());
             },
             title: "Get In"),
       ],

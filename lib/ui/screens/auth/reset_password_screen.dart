@@ -1,9 +1,12 @@
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
 import 'package:GID/core/ui_utils.dart';
+import 'package:GID/ui/screens/auth/login_screen.dart';
 import 'package:GID/ui/widgets/app_button.dart';
 import 'package:GID/ui/widgets/app_edit_text.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key});
@@ -28,7 +31,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              gap36,
+              const Gap(90),
               const Text(
                 'Reset password',
                 style: TextStyle(
@@ -45,11 +48,13 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               ),
               gap48,
               const AppEditText(hint: 'Email'),
-              gap48,
+              const Gap(260),
               AppButton(onTap: () {}, title: 'Confirm reset password'),
               gap18,
               AppButton(
-                onTap: () {},
+                onTap: () {
+                  Get.to(const LoginScreen());
+                },
                 title: 'Cancel',
                 whiteButtton: true,
               ),

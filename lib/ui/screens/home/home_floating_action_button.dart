@@ -1,5 +1,6 @@
 import 'package:GID/core/ui_color_constant.dart';
 import 'package:GID/core/ui_constants.dart';
+import 'package:GID/ui/screens/home/new_task_button_sheet.dart';
 import 'package:flutter/material.dart';
 
 class HomeFloatingActionButton extends StatelessWidget {
@@ -14,50 +15,45 @@ class HomeFloatingActionButton extends StatelessWidget {
       elevation: 0,
       foregroundColor: Colors.black,
       onPressed: () {
+        //S. Click on Floating Button
         showModalBottomSheet(
-          backgroundColor: getBackgroundColor(),
+          backgroundColor: Colors.transparent.withGreen(200).withOpacity(0.3),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
           context: context,
           isScrollControlled: true,
           builder: (BuildContext context) {
-            return DraggableScrollableSheet(
-              expand: false,
-              initialChildSize: 0.4,
-              builder: (context, scrollController) {
-                return Padding(
-                  padding: const EdgeInsets.fromLTRB(24.0, 10.0, 24.0, 0),
-                  child: Column(
-                    children: [
-                      const Divider(
-                        height: 10,
-                        color: Color.fromARGB(255, 180, 222, 182),
-                        thickness: 3,
-                        indent: 160,
-                        endIndent: 160,
-                      ),
-                      gap18,
-                      BottomSheetListContainer(
-                          icon: Icons.edit_rounded,
-                          text: 'Add New Task',
-                          onTap: () {}),
-                      BottomSheetListContainer(
-                          icon: Icons.playlist_add_rounded,
-                          text: 'Add New Category',
-                          onTap: () {}),
-                      BottomSheetListContainer(
-                          icon: Icons.person_pin_circle_rounded,
-                          text: 'Add New Circle',
-                          onTap: () {}),
-                      BottomSheetListContainer(
-                          icon: Icons.tag_rounded,
-                          text: 'Add New Tag',
-                          onTap: () {}),
-                    ],
+            return Padding(
+              padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Divider(
+                    height: 10,
+                    color: Color.fromARGB(255, 180, 222, 182),
+                    thickness: 3,
+                    indent: 160,
+                    endIndent: 160,
                   ),
-                );
-              },
+                  gap18,
+
+                  //Add New Task on floating button
+                  const NewTaskButtonSheet(),
+                  BottomSheetListContainer(
+                      icon: Icons.playlist_add_rounded,
+                      text: 'Add New Category',
+                      onTap: () {}),
+                  BottomSheetListContainer(
+                      icon: Icons.person_pin_circle_rounded,
+                      text: 'Add New Circle',
+                      onTap: () {}),
+                  BottomSheetListContainer(
+                      icon: Icons.tag_rounded,
+                      text: 'Add New Tag',
+                      onTap: () {}),
+                ],
+              ),
             );
           },
         );
@@ -67,7 +63,7 @@ class HomeFloatingActionButton extends StatelessWidget {
   }
 }
 
-//Container list
+//floting Card list
 class BottomSheetListContainer extends StatelessWidget {
   final IconData icon;
   final String text;
