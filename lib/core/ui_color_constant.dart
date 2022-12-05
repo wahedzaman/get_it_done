@@ -14,6 +14,7 @@ const String mutedBlueColor = "#246682";
 const String greyColor = "#C4C4C4";
 const String greyLight = "#E9ECF2";
 const String greyDark = "#85949F";
+const Color getHabibColor = Color.fromARGB(255, 31, 187, 46);
 
 dynamic getBackgroundColor() {
   return hexToColor(greyLight);

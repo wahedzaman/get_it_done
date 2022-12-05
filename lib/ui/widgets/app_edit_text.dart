@@ -8,11 +8,15 @@ import 'package:GID/core/ui_color_constant.dart';
 class AppEditText extends StatefulWidget {
   final String? hint;
   final bool isObscure;
+  final double height;
+  final int maxLines;
 
   const AppEditText({
     Key? key,
     this.hint,
     this.isObscure = false,
+    this.height = 70,
+    this.maxLines = 1,
   }) : super(key: key);
 
   @override
@@ -26,28 +30,29 @@ class _AppEditTextState extends State<AppEditText> {
     return Container(
       padding: paddingH12,
       width: double.infinity,
-      height: 70,
+      height: widget.height,
       decoration: BoxDecoration(
-        color: getBackgroundColor(),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Center(
         child: TextFormField(
+          maxLines: widget.maxLines,
           obscureText: (widget.isObscure && hidePassword),
-          maxLines: 1,
           decoration: InputDecoration(
               suffixIcon: widget.isObscure
                   ? Container(
                       child: (GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            hidePassword = !hidePassword;
-                          });
-                        },
-                        child: Icon(hidePassword
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                      )),
+                          onTap: () {
+                            setState(() {
+                              hidePassword = !hidePassword;
+                            });
+                          },
+                          child: Icon(
+                              hidePassword
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                              color: const Color.fromARGB(255, 69, 167, 79)))),
                     )
                   : null,
               suffixIconConstraints: const BoxConstraints(

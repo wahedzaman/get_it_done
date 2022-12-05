@@ -7,7 +7,6 @@ class AppButton extends StatelessWidget {
   String title;
   bool whiteButtton;
   double width;
-
   AppButton({
     Key? key,
     required this.onTap,
@@ -25,21 +24,22 @@ class AppButton extends StatelessWidget {
           color: whiteButtton ? Colors.white : Colors.black,
           borderRadius: BorderRadius.circular(12)),
       child: Material(
-        color: Colors.transparent,
+        color: const Color.fromARGB(
+            0, 69, 255, 7), //I just change this one for the testing
         child: InkWell(
           onTap: () {
             onTap();
           },
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-            child: Center(
-              child: Text(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
                 title,
                 style: TextStyle(
                     color: whiteButtton ? Colors.black : Colors.white,
                     fontSize: 20),
               ),
-            ),
+            ],
           ),
         ),
       ),
